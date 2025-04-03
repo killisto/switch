@@ -1,0 +1,211 @@
+/* Import Tailwind and DaisyUI */
+@import "tailwindcss";
+@plugin "daisyui";
+
+/* Target only aceuil.html by using the .aceuil-page class */
+.acueil
+ {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #111;
+    font-family: 'Roboto', sans-serif;
+}
+
+.button-container {
+    position: relative;
+}
+
+.cyberpunk-button {
+    background-color: #1f1f1f;
+    color: #00ffcc;
+    font-size: 24px;
+    font-weight: bold;
+    padding: 15px 30px;
+    border: 2px solid #00ffcc;
+    border-radius: 8px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: all 0.3s ease;
+    outline: none;
+}
+
+.cyberpunk-button:before, .cyberpunk-button:after {
+    content: "";
+    position: absolute;
+    background-color: #ff0066;
+    transition: all 0.2s ease-in-out;
+}
+
+.cyberpunk-button:before {
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    transform: skewX(-30deg);
+}
+
+.cyberpunk-button:after {
+    bottom: 0;
+    right: 0;
+    width: 50%;
+    height: 100%;
+    transform: skewX(30deg);
+}
+
+.cyberpunk-button:hover {
+    background-color: #333;
+    color: #ff0066;
+    border-color: #ff0066;
+    animation: glitch 1s infinite;
+}
+
+.cyberpunk-button:active {
+    transform: scale(0.95);
+}
+
+@keyframes glitch {
+    0% {
+        clip-path: inset(0% 0 5% 0);
+        transform: translateX(-5px);
+    }
+    20% {
+        clip-path: inset(10% 0 0 0);
+        transform: translateX(10px);
+    }
+    40% {
+        clip-path: inset(0% 0 5% 0);
+        transform: translateX(-5px);
+    }
+    60% {
+        clip-path: inset(0% 0 5% 0);
+        transform: translateX(5px);
+    }
+    80% {
+        clip-path: inset(5% 0 0 0);
+        transform: translateX(-5px);
+    }
+    100% {
+        clip-path: inset(0% 0 5% 0);
+        transform: translateX(0);
+    }
+}
+
+/* Global Styles */
+body {
+    background-image: url('https://wallpapercave.com/wp/wp7095191.png'); /* Hosted Cyberpunk Night City */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: #00ffff;
+    font-family: 'Orbitron', sans-serif;
+    text-align: center;
+    padding: 50px;
+    overflow: hidden;
+}
+
+/* Glitch Effect for h1 */
+h1 {
+    font-size: 3em;
+    text-shadow: 0 0 10px #00ffff, 0 0 20px #ff06B5;
+    animation: glitch 1s infinite alternate;
+}
+
+@keyframes glitch {
+    0% { text-shadow: 2px 2px #ff06B5; }
+    100% { text-shadow: -2px -2px #00ffff; }
+}
+
+/* Neon Button Styles */
+.neon-button {
+    background: black;
+    border: 2px solid #ff06B5;
+    padding: 15px 30px;
+    font-size: 1.2em;
+    color: #ff06B5;
+    cursor: pointer;
+    text-transform: uppercase;
+    text-shadow: 0 0 5px #ff06B5;
+    transition: 0.3s;
+}
+
+.neon-button:hover {
+    background: #ff06B5;
+    color: #0d0d0d;
+    box-shadow: 0 0 10px #ff06B5, 0 0 40px #ff06B5;
+}
+
+/* Calculator Styles */
+.calculator {
+    display: inline-block;
+    background-color: rgba(26, 26, 26, 0.9);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px #00ffff, 0 0 40px #ff06B5;
+}
+
+.display {
+    width: 300px;
+    height: 50px;
+    background-color: #0d0d0d;
+    color: #00ffff;
+    font-size: 2em;
+    border: none;
+    padding: 10px;
+    text-align: right;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+.button {
+    padding: 20px;
+    font-size: 1.5em;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.button:hover {
+    background-color: #ff06B5;
+    color: #0d0d0d;
+    box-shadow: 0 0 10px #ff06B5, 0 0 40px #ff06B5;
+}
+
+/* Scanlines Effect */
+.scanlines {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(
+        to bottom,
+        rgba(255, 255, 255, 0.05) 0px,
+        rgba(0, 0, 0, 0.05) 3px
+    );
+    pointer-events: none;
+}
+
+/* Message Text */
+.message {
+    font-size: 1.2em;
+    margin-top: 20px;
+    color: #ff06B5;
+    text-shadow: 0 0 10px #ff06B5;
+}
